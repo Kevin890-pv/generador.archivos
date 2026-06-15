@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ec2b12" />
+    <title>Generador de Caracteristicas</title>
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" href="icon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="login-view" id="loginView">
+        <form class="login-panel" id="loginForm">
+          <div class="login-brand">
+            <div class="login-logo" aria-hidden="true">GC</div>
+            <div>
+              <p class="eyebrow">Acceso privado</p>
+              <h1>Generador de fichas</h1>
+            </div>
+          </div>
+          <p class="login-copy">Ingresa para consultar equipos y crear formatos comerciales.</p>
+          <label>
+            Correo
+            <input id="username" type="email" autocomplete="off" required />
+          </label>
+          <label>
+            Contrasena
+            <input id="password" type="password" autocomplete="new-password" required />
+          </label>
+          <button class="primary-button" type="submit">Ingresar</button>
+          <p class="hint" id="loginMessage">Ingresa tus credenciales para continuar.</p>
+        </form>
+      </section>
+
+      <section class="app-view hidden" id="appView">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Busqueda automatica</p>
+            <h1>Generador de caracteristicas</h1>
+          </div>
+          <div class="top-actions">
+            <div class="mode-switch" aria-label="Funciones">
+              <button class="mode-button active" id="creatorModeBtn" type="button">Crear plantilla</button>
+              <button class="mode-button" id="libraryModeBtn" type="button">Biblioteca</button>
+            </div>
+            <button class="ghost-button" id="logoutBtn" type="button">Cerrar sesion</button>
+          </div>
+        </header>
+
+        <div class="workspace" id="creatorView">
+          <form class="editor" id="deviceForm">
+            <div class="search-box">
+              <label>
+                Nombre del equipo
+                <input id="deviceName" type="text" value="Motorola Moto Edge 60 Fusion" />
+              </label>
+              <button class="primary-button" id="searchBtn" type="button">Buscar caracteristicas</button>
+            </div>
+
+            <label class="hidden" id="resultLabel">
+              Resultados encontrados
+              <select id="searchResults"></select>
+            </label>
+            <p class="status" id="searchStatus">Escribe marca o modelo para rellenar automaticamente.</p>
+
+            <div class="group-title">Datos editables</div>
+            <div class="field-grid compact">
+              <label>
+                Almacenamiento titulo
+                <input id="storage" type="text" value="256GB 8GB" />
+              </label>
+              <label>
+                Android
+                <input id="android" type="text" value="15" />
+              </label>
+              <label>
+                Pantalla
+                <input id="screen" type="text" value="6.67" />
+              </label>
+              <label>
+                Trasera
+                <input id="rearCamera" type="text" value="50+13MP" />
+              </label>
+              <label>
+                Frontal
+                <input id="frontCamera" type="text" value="32MP" />
+              </label>
+              <label>
+                M. interna
+                <input id="internal" type="text" value="256GB" />
+              </label>
+              <label>
+                Max. SD
+                <input id="cardSlot" type="text" value="1TB" />
+              </label>
+              <label>
+                Nucleos
+                <input id="cores" type="text" value="8x" />
+              </label>
+              <label>
+                GHz
+                <input id="ghz" type="text" value="2.5/2.0" />
+              </label>
+              <label>
+                RAM
+                <input id="ram" type="text" value="8GB" />
+              </label>
+              <label>
+                Gramos
+                <input id="weight" type="text" value="179.5" />
+              </label>
+              <label>
+                Alto
+                <input id="height" type="text" value="16.1" />
+              </label>
+              <label>
+                Ancho
+                <input id="widthPhone" type="text" value="7.3" />
+              </label>
+              <label>
+                Grosor
+                <input id="thickness" type="text" value="0.8" />
+              </label>
+              <label>
+                Bateria
+                <input id="battery" type="text" value="5200" />
+              </label>
+            </div>
+
+            <label>
+              Imagen manual opcional
+              <input id="deviceImage" type="file" accept="image/png,image/jpeg,image/webp" />
+            </label>
+
+            <div class="group-title">Guardar plantilla</div>
+            <div class="field-grid">
+              <label>
+                Carpeta de marca
+                <input id="saveBrand" type="text" value="Motorola" />
+              </label>
+              <label>
+                Nombre de archivo
+                <input id="saveName" type="text" value="Motorola Moto Edge 60 Fusion" />
+              </label>
+            </div>
+            <button class="ghost-button" id="saveImageBtn" type="button">Guardar en biblioteca</button>
+            <p class="status" id="saveStatus"></p>
+
+            <label>
+              Bandas 3G
+              <textarea id="band3g">HSDPA 850 / 900 / 1700(AWS) / 1900 / 2100</textarea>
+            </label>
+            <label>
+              Bandas 2G
+              <textarea id="band2g">GSM 850 / 900 / 1800 / 1900</textarea>
+            </label>
+            <label>
+              Bandas 4G
+              <textarea id="band4g">1, 2, 3, 4, 5, 7, 8, 12, 13, 17, 18, 19, 20, 25, 26, 28, 32, 34, 38, 39, 40, 41, 42, 43, 48, 66 - International</textarea>
+            </label>
+            <label>
+              Bandas 5G
+              <textarea id="band5g">1, 2, 3, 5, 7, 8, 20, 26, 28, 38, 40, 41, 66, 75, 77, 78 SA/NSA/Sub6 - International</textarea>
+            </label>
+
+            <div class="toolbar">
+              <label>
+                Formato
+                <select id="format">
+                  <option value="png">PNG</option>
+                  <option value="jpg">JPG</option>
+                </select>
+              </label>
+              <button class="primary-button" id="downloadBtn" type="button">Descargar imagen</button>
+            </div>
+          </form>
+
+          <section class="preview-panel">
+            <div class="preview-head">
+              <h2>Vista previa</h2>
+              <span>1760 x 876 px</span>
+            </div>
+            <canvas id="cardCanvas" width="1760" height="876"></canvas>
+          </section>
+        </div>
+
+        <section class="library-view hidden" id="libraryView">
+          <div class="library-head">
+            <div>
+              <p class="eyebrow">Imagenes guardadas</p>
+              <h2>Biblioteca por marca</h2>
+            </div>
+            <button class="ghost-button" id="refreshLibraryBtn" type="button">Actualizar</button>
+          </div>
+          <div class="library-grid" id="libraryGrid"></div>
+          <p class="status" id="libraryStatus"></p>
+        </section>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("sw.js").catch(() => {});
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "name": "Generador de Caracteristicas",
+  "short_name": "Generador",
+  "description": "Generador de fichas tecnicas de celulares en PNG y JPG.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f2f2f2",
+  "theme_color": "#ec2b12",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
